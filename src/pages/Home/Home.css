@@ -1,0 +1,12 @@
+.hero-section{
+    background: url('../../Images/adam-niescioruk-hWzrJsS8gwI-unsplash (2).jpg');
+    background-size: cover;
+    background-position-y: center;
+    /* background-position-x: right; */
+}
+
+#hero-overlay{
+    background-color: rgba(0,0,0,0.2);
+    z-index: 2;
+
+} 
