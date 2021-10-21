@@ -62,7 +62,7 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div style={{height: '60vh'}}>
             <Container>
             <Row  className="justify-content-md-center my-5">
             <Col xs md={9} lg={4}>

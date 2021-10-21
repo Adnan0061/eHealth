@@ -4,8 +4,8 @@ import { Envelope, Map, PinMap, TelephoneInbound } from 'react-bootstrap-icons';
 
 const Contact = () => {
     return (
-        <div>
-            <Container>
+        <div style={{height: '65vh'}}>
+            <Container className='mt-5'>
                 <Row>
                     <Col className='text-start text-secondary mx-3 my-3'>
                         <Row className='my-4 p-2 shadow' style={{borderRadius: '15px'}}>
