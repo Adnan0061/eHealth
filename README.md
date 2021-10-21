@@ -2,7 +2,7 @@
 
 this is a online healthcare website where people can book appointment to doctor for both online and physical consult session. It also has medicine delivery option so you can get your prescribed medicine at home.
 
-[Live site](https://ehealth-online-healthcare.netlify.app/insurance-details)
+[Live site](https://ehealth-online-healthcare.netlify.app)
 
 five main features of the website
 
