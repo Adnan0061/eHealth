@@ -1,7 +1,9 @@
 import React from 'react';
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 import { CameraVideo, FilePlus, People, PlusSquareDotted, TelephoneInbound, Truck } from 'react-bootstrap-icons';
-import AboutImage from '../../Images/linkedin-sales-solutions-Be5aVKFv9ho-unsplash.jpg'
+import choose from '../../Images/pexels-gustavo-fring-3985163.jpg'
+import upload from '../../Images/pexels-cottonbro-3584969.jpg'
+import appointment from '../../Images/pexels-nataliya-vaitkevich-6863323.jpg'
 import { Link } from 'react-router-dom';
 
 const OnlineDetails = () => {
@@ -24,36 +26,36 @@ const OnlineDetails = () => {
                 <Container>
                 <Row>
                     <Col sm={12} md={6}>
-                        <img className='img-fluid' src={AboutImage} alt="" />
+                        <img className='img-fluid' src={choose} alt="" />
                     </Col>
                     <Col sm={12} md={6} className='ps-4 text-xs-center text-md-start align-self-center'>
                         <h2 className='fs-1'>Flexibility to Choose</h2>
-                        <p>We are well protected and documented and insurance policy oriented. So you won't face any problem from your insurance</p>
+                        <p>You can now get consultation from doctor of your choice from anywhere anytime. No need to make extra plan for this.</p>
                     </Col>
                 </Row>
 
                 <Row>
                     <Col sm={12} md={6} className='ps-4 text-xs-center text-md-start align-self-center'>
-                        <h2 className='fs-1'>Text file upload</h2>
-                        <p>You can choose for online session and get consultation from anywhere but incase your problem require physical session, you can also book for a session from here.</p>
+                        <h2 className='fs-1'>Upload files</h2>
+                        <p>You can send images of your previous prescriptions and reports when you make appointment. With this doctors can see your previous reports and conditions amd take proper matures.</p>
                     </Col>
                     <Col sm={12} md={6}>
-                        <img className='img-fluid' src={AboutImage} alt="" />
+                        <img className='img-fluid' src={upload} alt="" />
                     </Col>
                 </Row>
 
                 <Row>
                     <Col sm={12} md={6}>
-                        <img className='img-fluid' src={AboutImage} alt="" />
+                        <img className='img-fluid' src={appointment} alt="" />
                     </Col>
                     <Col sm={12} md={6} className='ps-4 text-xs-center text-md-start align-self-center'>
                         <h2 className='fs-1'>Easy Appointment</h2>
-                        <p>We have amazing doctors who are one of the best in their respective field. You can choose your doctor according to your need and what their specialized sector. </p>
+                        <p>Just complete the simple form get an appointment. You will get the best service</p>
                     </Col>
                 </Row>
 
                 <Row className='my-5'>       
-                <Link to={'/doctors'}><Button variant="info">Doctors List</Button></Link>
+                <Link to={'/doctors'}><Button variant="info">Get Appointment Now</Button></Link>
                 </Row>
 
                 </Container>

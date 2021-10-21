@@ -15,6 +15,9 @@ import Insurance from './pages/Insurance/Insurance';
 import Register from './pages/Register/Register';
 import Login from './pages/Register/Login';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './shared/PrivateRoute/PrivateRoute';
+import AmbulanceForm from './pages/AmbulanceForm/AmbulanceForm';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   return (
@@ -32,21 +35,27 @@ function App() {
           <Route exact path='/doctors'>
             <Doctors></Doctors>
           </Route>
+          <Route exact path='/contact'>
+            <Contact></Contact>
+          </Route>
           <Route path='/online-consultation'>
             <OnlineDetails></OnlineDetails>
           </Route>
           <Route path='/physical-consultation'>
             <PhysicalDetails></PhysicalDetails>
           </Route>
-          <Route path='/doctor/:name'>
+          <PrivateRoute path='/doctor/:name'>
             <Booking></Booking>
-          </Route>
-          <Route path='/order-medicine'>
+          </PrivateRoute>
+          <PrivateRoute path='/order-medicine'>
             <MedicineDelivared> </MedicineDelivared>
-          </Route>
+          </PrivateRoute>
           <Route path='/ambulance'>
             <Ambulance></Ambulance>
           </Route>
+          <PrivateRoute path='/ambulance-form'>
+            <AmbulanceForm></AmbulanceForm>
+          </PrivateRoute>
           <Route path='/customer-care'>
             <CustomerCare></CustomerCare>
           </Route>

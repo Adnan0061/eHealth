@@ -1,13 +1,14 @@
 import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import AboutImage from '../../Images/linkedin-sales-solutions-Be5aVKFv9ho-unsplash.jpg'
+import location from '../../Images/pexels-aksonsat-uanthoeng-1078850.jpg'
+import meeting from '../../Images/pexels-ron-lach-9870228.jpg'
 
 const PhysicalDetails = () => {
     return (
         <div>
-                        {/* Hero Section */}
-                        <section className='hero-section' style={{height: '75vh'}}>
+            {/* Hero Section */}
+            <section className='hero-section' style={{height: '75vh'}}>
             <div id='hero-overlay' className='h-100 d-flex align-items-center'>    
                 <div className='container text-start text-light'>
                     <h1 style={{fontSize: '56px'}}>Book practical consultation session <span style={{color:'#0dcaf0'}}>online</span></h1>
@@ -18,12 +19,12 @@ const PhysicalDetails = () => {
             </div>
             </section>
 
-            {/* why us */}
+            {/* why Physical session */}
             <section className='my-5'>
                 <Container>
                 <Row>
                     <Col sm={12} md={6}>
-                        <img className='img-fluid' src={AboutImage} alt="" />
+                        <img className='img-fluid' src={location} alt="" />
                     </Col>
                     <Col sm={12} md={6} className='ps-4 text-xs-center text-md-start align-self-center'>
                         <h2 className='fs-1'>Choose by location</h2>
@@ -37,7 +38,7 @@ const PhysicalDetails = () => {
                         <p>You can choose for online session and get consultation from anywhere but incase your problem require physical session, you can also book for a session from here.</p>
                     </Col>
                     <Col sm={12} md={6}>
-                        <img className='img-fluid' src={AboutImage} alt="" />
+                        <img className='img-fluid' src={meeting} alt="" />
                     </Col>
                 </Row>
 
