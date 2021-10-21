@@ -5,7 +5,7 @@ import useAuth from '../../pages/hooks/useAuth';
 import useFirebase from '../../pages/hooks/useFirebase';
 
 const Header = () => {
-    const { user, Logout } = useFirebase()
+    const { user, Logout } = useAuth()
 
     return (
         <Navbar style={{backgroundColor: 'rgb(13, 202, 240)'}} expand="lg">

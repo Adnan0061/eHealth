@@ -1,10 +1,11 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
+import useAuth from '../../pages/hooks/useAuth';
 import useFirebase from '../../pages/hooks/useFirebase';
 
 const PrivateRoute = ({children, ...rest}) => {
-    const { user, isLoading } = useFirebase();
+    const { user, isLoading } = useAuth();
     if(isLoading){
         return <Spinner animation="border" />
     }

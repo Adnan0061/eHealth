@@ -3,10 +3,11 @@ import { Col, Container, Form, Row, Button, ButtonGroup } from 'react-bootstrap'
 import { Github, Google } from 'react-bootstrap-icons';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 import useFirebase from '../hooks/useFirebase';
 
 const Login = () => {
-    const { loginWithEmail, createUserWithGoogle } =useFirebase()
+    const { loginWithEmail, createUserWithGoogle } =useAuth()
     const history = useHistory();
     const location = useLocation();     
     const url = location?.state?.from || '/';

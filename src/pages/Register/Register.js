@@ -9,7 +9,7 @@ import useFirebase from '../hooks/useFirebase';
 
 
 const Register = () => {
-    const { registerWithEmail, createUserWithGoogle } =useFirebase()
+    const { registerWithEmail, createUserWithGoogle } =useAuth()
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
