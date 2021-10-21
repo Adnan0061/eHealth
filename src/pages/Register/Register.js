@@ -57,7 +57,6 @@ const Register = () => {
         })
         .catch((error) => {
             const errorMessage = error.message;
-            // setErrorMsg('Your account creation failed, try again')
             setErrorMsg(errorMessage)
           });
     }
