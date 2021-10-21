@@ -7,7 +7,7 @@ import useAuth from '../hooks/useAuth';
 import useFirebase from '../hooks/useFirebase';
 
 const Login = () => {
-    const { loginWithEmail, createUserWithGoogle } =useAuth()
+    const { loginWithEmail, createUserWithGoogle, createUserWithGitHub, errorLoginMsg } =useAuth()
     const history = useHistory();
     const location = useLocation();     
     const url = location?.state?.from || '/';
@@ -15,6 +15,8 @@ const Login = () => {
     
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [messageSuccess, setMessageSuccess] = useState('')
+    const [messageError, setMessageError] = useState('')
     
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -24,10 +26,23 @@ const Login = () => {
     }
 
     const handleLogin = (e) => {
-        console.log(email, password)
         e.preventDefault();
-        loginWithEmail(email, password)
-
+        if(email !== ''  &&  password !== ''){
+            loginWithEmail(email, password)
+            .then((result) => {
+                setMessageSuccess("Login Success")
+                setMessageError('')
+            }) 
+            .catch((error) => {
+                // setErrorLoginMsg(true);
+                setMessageError("email & password does not match, try again")
+                setMessageSuccess('')
+            })
+            // .finally(()=>setIsLoading(false))
+        }else{
+            setMessageError("please enter proper email & password")
+            setMessageSuccess('')
+        }
     }
     const handleGoogle = () => {
         createUserWithGoogle()
@@ -39,7 +54,7 @@ const Login = () => {
           });
     }
     const handleGitHub = () => {
-        createUserWithGoogle()
+        createUserWithGitHub()
         .then((result) => {
             history.push(url)
         })
@@ -51,9 +66,14 @@ const Login = () => {
     return (
         <div>
             <Container>
-            <Row  className="justify-content-md-center my-5">
+            <Row  className="justify-content-md-center my-5" style={{height: '60vh'}}>
             <Col xs md={9} lg={4}>
                 <h2>Log In here</h2>
+
+                
+                    <p className='text-success'>{messageSuccess}</p>
+                    <p className='text-danger'>{messageError}</p>
+                
             <Form onSubmit={ handleLogin}  className='text-start'>
                 
                 <Form.Group className="mb-3" controlId="formBasicEmail">

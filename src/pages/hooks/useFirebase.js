@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import InitializeAuthentication from '../../Firebase/firebase.init';
 import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, signOut } from "firebase/auth";
+import { useHistory } from 'react-router';
 
 
 
@@ -10,13 +11,15 @@ const useFirebase = () => {
 const [user, setUser] = useState({})
 const [isLoading, setIsLoading] = useState(true)
 const [successMsg, setSuccessMsg] = useState('')
+const [errorMsg, setErrorMsg] = useState('')
+const [errorLoginMsg, setErrorLoginMsg] = useState(false)
 
 const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
 
-    useEffect(()=>{
 
+    useEffect(()=>{
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
               setUser(user);
@@ -33,12 +36,15 @@ const gitHubProvider = new GithubAuthProvider();
         // console.log(email, password)
         createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
-            setUser(result.user);
             updateName(name)
+            setUser(result.user);
+            setSuccessMsg('Your account is successfully created')
+        })
+        .catch((error) => {
+            setErrorMsg('This email already exists.');
         })
         .finally(()=>setIsLoading(false))
-        console.log(name, email, password)
-        
+    
     }
     const updateName = (name) => {
         setIsLoading(true)
@@ -48,12 +54,16 @@ const gitHubProvider = new GithubAuthProvider();
     }
 
     const loginWithEmail = (email, password) => {
+        setErrorLoginMsg(false)
         setIsLoading(true)
-        signInWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-            setUser(result.user);
-        })
-        .finally(()=>setIsLoading(false))
+        return signInWithEmailAndPassword(auth, email, password)
+        // .then((result) => {
+        //     setUser(result.user);
+        // }) 
+        // .catch((error) => {
+        //     setErrorLoginMsg(true);
+        // })
+        // .finally(()=>setIsLoading(false))
     }
 
     const createUserWithGoogle = () => {
@@ -85,6 +95,9 @@ const gitHubProvider = new GithubAuthProvider();
         createUserWithGoogle,
         createUserWithGitHub,
         successMsg,
+        errorLoginMsg,
+        errorMsg, 
+        setErrorMsg,
         setSuccessMsg,
         Logout,
     };
