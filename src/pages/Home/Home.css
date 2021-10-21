@@ -10,3 +10,8 @@
     z-index: 2;
 
 } 
+
+.card:hover{
+    box-shadow: 3px 3px 15px 1px lightgrey;
+    border-radius: 15px;
+}

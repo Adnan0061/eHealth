@@ -48,27 +48,27 @@ const Home = () => {
                     <Row xs={1} md={2} lg={3} className="g-4">
                         <Col>
                         <Card className='mx-3 border-0 h-100'>
-                            <CameraVideo color="#0dcaf0" className='mt-5 ms-3' size={56} />
+                            <CameraVideo color="#0dcaf0" className='mt-3 ms-3' size={56} />
                             <Card.Body className='d-flex flex-column'>
                                 <Card.Title className='me-auto'>Online Consultation</Card.Title>
                                 <Card.Text className='text-start'>Get your consultation online anywhere any place. You don't have to go to clinic unless you want to or have to. And it's easy to make appointment</Card.Text>
                             </Card.Body>
-                            <Card.Footer className='bg-transparent border-0'>
+                            <Card.Footer className='bg-transparent border-0 mb-3'>
                                 <Link to={'/online-consultation'}><Button variant="info" className='w-100'>Book Now</Button></Link>
                             </Card.Footer>
                         </Card>
                         </Col>
 
                         <Col>
-                        <Card className='mx-3 border-0 h-100'>
-                            <People color="#0dcaf0" className='mt-5 ms-3' size={56} />
+                        <Card className='mx-3 my border-0 h-100'>
+                            <People color="#0dcaf0" className='mt-3 ms-3' size={56} />
                             <Card.Body className='d-flex flex-column'>
                                 <Card.Title className='me-auto'>Physical Consultation</Card.Title>
                                 <Card.Text className='text-start'>
                                     You can make appointment with the doctors for physical session also. Choose who you want to consult with for the meeting. 
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className='bg-transparent border-0'>
+                            <Card.Footer className='bg-transparent border-0 mb-3'>
                             <Link to={'/physical-consultation'}>
                                 <Button variant="info" className='w-100'>Book Now</Button>
                             </Link>
@@ -78,14 +78,14 @@ const Home = () => {
 
                         <Col>
                         <Card className='mx-3 border-0 h-100'>
-                            <Truck color="#0dcaf0" className='mt-5 ms-3' size={56} />
+                            <Truck color="#0dcaf0" className='mt-3 ms-3' size={56} />
                             <Card.Body className='d-flex flex-column'>
                             <Card.Title className='me-auto'>Medicine Home Delivery</Card.Title>
                             <Card.Text className='text-start'>
                                 You will also get your medicine home delivered. Upload your prescription and get your medicine at your home.
                             </Card.Text>
                             </Card.Body>
-                            <Card.Footer className='bg-transparent border-0'>
+                            <Card.Footer className='bg-transparent border-0 mb-3'>
                             <Link to={'/order-medicine'}>
                                 <Button variant="info" className='w-100'>Order Now</Button>
                             </Link>
@@ -95,14 +95,14 @@ const Home = () => {
 
                         <Col>
                         <Card className='mx-3 border-0 h-100'>
-                            <PlusSquareDotted  color="#0dcaf0" className='mt-5 ms-3' size={56} />
+                            <PlusSquareDotted  color="#0dcaf0" className='mt-3 ms-3' size={56} />
                             <Card.Body className='d-flex flex-column'>
                                 <Card.Title  className='me-auto'>Emergency Ambulance</Card.Title>
                                 <Card.Text className='text-start'>
                                     If you need ambulance just send us your address. Ambulance will be at your door step within 30 min. 
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className='bg-transparent border-0'>
+                            <Card.Footer className='bg-transparent border-0 mb-3'>
                             <Link to={'/ambulance'}><Button variant="info" className='w-100'>Call Now</Button></Link>
                             </Card.Footer>
                         </Card>
@@ -110,14 +110,14 @@ const Home = () => {
                         
                         <Col>
                         <Card className='mx-3 border-0 h-100'>
-                            <TelephoneInbound  color="#0dcaf0" className='mt-5 ms-3' size={56} />
+                            <TelephoneInbound  color="#0dcaf0" className='mt-3 ms-3' size={56} />
                             <Card.Body className='d-flex flex-column'>
                                 <Card.Title  className='me-auto'>24/7 support</Card.Title>
                                 <Card.Text className='text-start'>
                                     Our call center is open all day all night and everyday. For any query call us. We will try to solve your problem.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className='bg-transparent border-0'>
+                            <Card.Footer className='bg-transparent border-0 mb-3'>
                             <Link to={'/customer-care'}><Button variant="info" className='w-100'>Call Now</Button></Link>
                             </Card.Footer>
                         </Card>
@@ -125,14 +125,14 @@ const Home = () => {
                         
                         <Col>
                         <Card className='mx-3 border-0 h-100'>
-                            <FilePlus color="#0dcaf0" className='mt-5 ms-3' size={56} />
+                            <FilePlus color="#0dcaf0" className='mt-3 ms-3' size={56} />
                             <Card.Body className='d-flex flex-column'>
                                 <Card.Title  className='me-auto'>Health Care Insurance</Card.Title>
                                 <Card.Text className='text-start'>
                                     For needy people we have insurance policy which covers upto 60% of the expenses. We value health and want to help.  
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className='bg-transparent border-0'>
+                            <Card.Footer className='bg-transparent border-0 mb-3'>
                             <Link to={'/insurance-details'}><Button variant="info" className='w-100'>Call Now</Button></Link>
                             </Card.Footer>
                         </Card>
@@ -152,14 +152,14 @@ const Home = () => {
                     <Col sm={12} md={6} className='ps-4 text-xs-center text-md-start align-self-center'>
                         <h2 className='fs-1'>Choose Doctor</h2>
                         <p>We have amazing doctors who are one of the best in their respective field. You can choose your doctor according to your need and what their specialized sector. </p>
-                        <Button variant="info">Doctors List</Button>
+                        <Button as={Link} to={'/doctors'} variant="info">Doctors List</Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col sm={12} md={6} className='ps-4 text-xs-center text-md-start align-self-center'>
                         <h2 className='fs-1'>Online and Physical</h2>
                         <p>You can choose for online session and get consultation from anywhere but incase your problem require physical session, you can also book for a session from here.</p>
-                        <Button variant="info">Book Session</Button>
+                        <Button as={Link} to={'/doctors'} variant="info">Book Session</Button>
                     </Col>
                     <Col sm={12} md={6}>
                         <img className='img-fluid' src={session} alt="" />
