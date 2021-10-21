@@ -6,8 +6,8 @@ this is a online healthcare website where people can book appointment to doctor 
 
 five main features of the website
 
-*A healthcare website that merges doctors ans patients.
-*Patient and doctors can have their session both online and offline
-*It also has medicine home delivery option
-*24/7 support
-*Insurance option for under privileged
+* A healthcare website that merges doctors ans patients.
+* Patient and doctors can have their session both online and offline
+* It also has medicine home delivery option
+* 24/7 support
+* Insurance option for under privileged
